@@ -1,0 +1,168 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Mining Safety Dashboard Design System - Industrial & Professional */
+
+@layer base {
+  :root {
+    /* Base colors - Clean professional background */
+    --background: 210 11% 15%;
+    --foreground: 210 40% 98%;
+
+    /* Card surfaces - Dark industrial panels */
+    --card: 210 11% 18%;
+    --card-foreground: 210 40% 98%;
+
+    /* Popover surfaces */
+    --popover: 210 11% 18%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Primary - Industrial Blue */
+    --primary: 207 89% 42%;
+    --primary-foreground: 210 40% 98%;
+    --primary-glow: 207 89% 62%;
+
+    /* Secondary - Copper/Bronze Mining Theme */
+    --secondary: 25 45% 37%;
+    --secondary-foreground: 210 40% 98%;
+    --secondary-glow: 25 65% 57%;
+
+    /* Muted elements */
+    --muted: 210 11% 21%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    /* Accent - Safety Orange */
+    --accent: 25 95% 53%;
+    --accent-foreground: 210 40% 98%;
+
+    /* Alert System Colors */
+    --success: 142 76% 36%;
+    --success-foreground: 210 40% 98%;
+    --warning: 43 96% 56%;
+    --warning-foreground: 210 11% 15%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Borders and inputs */
+    --border: 210 11% 28%;
+    --input: 210 11% 21%;
+    --ring: 207 89% 42%;
+
+    /* Mining-specific colors */
+    --earth: 25 45% 37%;
+    --rock: 210 11% 28%;
+    --safety: 142 76% 36%;
+    --danger-zone: 0 84% 60%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(207 89% 42%), hsl(207 89% 62%));
+    --gradient-mining: linear-gradient(135deg, hsl(25 45% 37%), hsl(25 65% 57%));
+    --gradient-alert: linear-gradient(135deg, hsl(25 95% 53%), hsl(43 96% 56%));
+    --gradient-risk: linear-gradient(135deg, hsl(0 84% 60%), hsl(25 95% 53%));
+    --gradient-surface: linear-gradient(145deg, hsl(210 11% 18%), hsl(210 11% 21%));
+    
+    /* Shadows with glow effects */
+    --shadow-glow: 0 0 20px hsl(207 89% 42% / 0.3);
+    --shadow-mining: 0 8px 32px hsl(25 45% 37% / 0.4);
+    --shadow-alert: 0 4px 20px hsl(25 95% 53% / 0.5);
+    --shadow-elegant: 0 10px 40px hsl(210 11% 5% / 0.5);
+
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.5rem;
+
+    /* Sidebar - Industrial Dark Theme */
+    --sidebar-background: 210 11% 15%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 207 89% 42%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 210 11% 21%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 210 11% 28%;
+    --sidebar-ring: 207 89% 42%;
+  }
+}
+
+/* Custom utility classes for mining dashboard */
+@layer components {
+  .gradient-mining {
+    background: var(--gradient-mining);
+  }
+  
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-alert {
+    background: var(--gradient-alert);
+  }
+  
+  .gradient-risk {
+    background: var(--gradient-risk);
+  }
+  
+  .gradient-surface {
+    background: var(--gradient-surface);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .shadow-mining {
+    box-shadow: var(--shadow-mining);
+  }
+  
+  .shadow-alert {
+    box-shadow: var(--shadow-alert);
+  }
+  
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+  
+  .mining-card {
+    @apply bg-card border border-border rounded-lg shadow-elegant transition-smooth hover:shadow-glow;
+  }
+  
+  .alert-card {
+    @apply bg-card border border-border rounded-lg shadow-alert transition-smooth;
+  }
+  
+  .risk-indicator {
+    @apply inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium transition-smooth;
+  }
+  
+  .risk-low {
+    @apply bg-success/20 text-success border border-success/30;
+  }
+  
+  .risk-medium {
+    @apply bg-warning/20 text-warning-foreground border border-warning/30;
+  }
+  
+  .risk-high {
+    @apply bg-destructive/20 text-destructive border border-destructive/30;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
